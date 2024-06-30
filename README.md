@@ -2,6 +2,8 @@
 
 CyberSafe Adventure helps you learn about the Computer Misuse Act 1990 through an engaging and interactive experience.
 
+![CyberSafe Game Screenshot](images/screenshot.jpg)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
