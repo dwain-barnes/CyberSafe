@@ -1,0 +1,262 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+#game-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 1.8em;
+    margin-top: 30px;
+}
+
+p {
+    color: #444;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#level-container, #decision-container, #explanation-container {
+    margin-top: 30px;
+}
+
+button {
+    margin: 10px;
+    padding: 12px 24px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#score-container {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #2c3e50;
+}
+
+.level-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#quiz-container {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.quiz-option {
+    margin: 15px 0;
+}
+
+#progress-bar {
+    width: 100%;
+    background-color: #ecf0f1;
+    margin-top: 30px;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+#progress {
+    width: 0;
+    height: 20px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-size: 0.8em;
+    transition: width 0.5s ease-in-out;
+}
+
+.info-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: #e67e22;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5vh auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 90vw;
+    height: 90vh;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 2;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #game-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .info-button {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    #game-container {
+        width: 95%;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    button {
+        padding: 10px 22px;
+        font-size: 0.95em;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 2vh auto;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3em;
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 1.2em;
+    }
+    
+    button {
+        padding: 14px 28px;
+        font-size: 1.1em;
+    }
+}
